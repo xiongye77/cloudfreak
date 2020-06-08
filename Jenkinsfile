@@ -8,7 +8,7 @@ pipeline {
         stage('Build maven ') {
             steps { 
                     sh 'pwd'      
-                    sh '/opt/apache-maven-3.6.3/bin/mvn  clean install package'
+                    sh 'mvn  clean install package'
             }
         }
         
