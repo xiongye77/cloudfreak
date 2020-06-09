@@ -30,13 +30,13 @@ pipeline {
             }
 	 }
 	    
-	   stage('Build on k8 ') {
+	   stage('Helm deploy on Kubernetes ') {
             steps {           
                         sh 'pwd'
                         sh 'cp -R helm/* .'
 		        sh 'ls -ltr'
                         sh 'pwd'
-                        sh '/usr/local/bin/helm upgrade --install petclinic-app petclinic  --set image.repository=registry.hub.docker.com/prawinkorvi/petclinic --set image.tag=${BUILD_NUMBER} '
+                        sh '/usr/local/bin/helm upgrade --install petclinic-app petclinic  --set image.repository=registry.hub.docker.com/dbaxy770928/java-maven --set image.tag=${BUILD_NUMBER} '
               			
             }           
         }
